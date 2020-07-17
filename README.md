@@ -5,15 +5,28 @@ This is a basic TODO App made using flutter.
 This app is mainly build for students to organize their works easily.
 
 
-## Getting Started
+## Screenshots:
+#### Home Screen :
+<!--Images-->
+![Screenshot](screenshots/img1.jpeg)
+#### Adding a new task :
+<!--Images-->
+![Screenshot](screenshots/img2.jpeg)
 
-This project is a starting point for a Flutter application.
+#### Categories:
+###### User can save their tasks in three different categories.
+<!--Images-->
+![Screenshot](screenshots/img4.jpeg)
+#### Saving a Task :
+<!--Images-->
+![Screenshot](screenshots/img3.jpeg)
+#### Homescreen View :
+###### The Tasks in the homescreen are grouped by the catagories and have ther own icons along with their own color.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+###### Each tile has a title and date as a subtitle and a delete icon to delete the task.
+<!--Images-->
+![Screenshot](screenshots/img5.jpeg)
+#### Deleting a Task :
+###### A snackBar appears at the bottom when you delete an task.
+<!--Images-->
+![Screenshot](screenshots/img6.jpeg)
