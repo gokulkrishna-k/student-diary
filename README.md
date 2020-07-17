@@ -14,12 +14,12 @@ This app is mainly build for students to organize their works easily.
 
 #### Categories:
 ###### User can save their tasks in three different categories.
+<img src="screenshots/img4.jpeg" height="500">
 
-<img src="screenshots/img3.jpeg" height="500">
 
 #### Saving a Task :
+<img src="screenshots/img3.jpeg" height="500">
 
-<img src="screenshots/img4.jpeg" height="500">
 
 #### Homescreen View :
 ###### The Tasks in the homescreen are grouped by the catagories and have ther own icons along with their own color.
