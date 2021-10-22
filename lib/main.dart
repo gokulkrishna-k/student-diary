@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
- void main() {
+
+void main() {
   runApp(MyApp());
 }
 
@@ -9,14 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Work Manager',
+        title: 'Student Diary',
         theme: ThemeData(
           brightness: Brightness.light,
-          primaryColor:Colors.cyan,
+          primaryColor: Colors.cyan,
           // accentColor: Colors.cyanAccent,
-    
-          // cardColor:Colors.black,
 
+          // cardColor:Colors.black,
         ),
         home: HomePage());
   }
