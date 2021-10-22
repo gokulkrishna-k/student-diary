@@ -14,9 +14,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.light,
           primaryColor: Colors.cyan,
-          // accentColor: Colors.cyanAccent,
-
-          // cardColor:Colors.black,
         ),
         home: HomePage());
   }

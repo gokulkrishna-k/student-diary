@@ -1,7 +1,7 @@
-# Work Manager
+# Student Diary
 
 This is my First Flutter project.
-This is a basic TODO App made using flutter.
+This is a basic App made using flutter to keep track of the assignments and records for students.
 This app is mainly build for students to organize their works easily.
 
 
