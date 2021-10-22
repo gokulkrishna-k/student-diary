@@ -27,32 +27,57 @@ class _NoteDetailState extends State<NoteDetail> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.bodyText1;
+    // TextStyle textStyle = Theme.of(context).textTheme.bodyText1;
     titleController.text = note.title;
     descriptionController.text = note.description;
 
     return Scaffold(
-        appBar: AppBar(title: Text(appBarTitle)),
+        appBar: AppBar(
+          title: Text(appBarTitle,
+              style: TextStyle(
+                  letterSpacing: 1,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                  color: Color.fromRGBO(2, 28, 51, 1))),
+          backgroundColor: Color.fromRGBO(241, 244, 251, 1),
+        ),
         body: Form(
             key: _formKey,
             child: Padding(
               padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
               child: ListView(
                 children: <Widget>[
-                  DropdownButton(
-                    items: _catagorey.map((String dropDownStringItem) {
-                      return DropdownMenuItem<String>(
-                        value: dropDownStringItem,
-                        child: Text(dropDownStringItem),
-                      );
-                    }).toList(),
-                    style: textStyle,
-                    value: getCatagoreyAsString(note.catagorey),
-                    onChanged: (value) {
-                      setState(() {
-                        updateCatagoreyAsInt(value);
-                      });
-                    },
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                    // decoration: InputDecoration(border: OutlineInputBorder()),
+                    decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 1.0, style: BorderStyle.solid),
+                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      ),
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton(
+                        isExpanded: true,
+                        items: _catagorey.map((String dropDownStringItem) {
+                          return DropdownMenuItem<String>(
+                            value: dropDownStringItem,
+                            child: Text(
+                              dropDownStringItem,
+                              style: TextStyle(fontFamily: "Poppins"),
+                            ),
+                          );
+                        }).toList(),
+                        value: getCatagoreyAsString(note.catagorey),
+                        onChanged: (value) {
+                          setState(() {
+                            updateCatagoreyAsInt(value);
+                          });
+                        },
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15, bottom: 15),
@@ -60,19 +85,42 @@ class _NoteDetailState extends State<NoteDetail> {
                       controller: titleController,
                       validator: (value) {
                         if (value.isEmpty) {
-                          return "* Please Enter a title";
+                          return "Please Enter a title";
                         }
-                        
                       },
-                      style: textStyle,
+                      style: TextStyle(fontFamily: "Poppins"),
                       onChanged: (value) {
                         updateTitle();
                       },
                       decoration: InputDecoration(
-                          labelText: 'Title',
-                          labelStyle: textStyle,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0))),
+                        labelText: 'Title',
+                        labelStyle: TextStyle(fontFamily: "Poppins"),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.red[400],
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.red[400],
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -80,15 +128,39 @@ class _NoteDetailState extends State<NoteDetail> {
                     child: TextFormField(
                       maxLines: 4,
                       controller: descriptionController,
-                      style: textStyle,
+                      style: TextStyle(fontFamily: "Poppins"),
                       onChanged: (value) {
                         updateDescription();
                       },
                       decoration: InputDecoration(
-                          labelText: 'Description',
-                          labelStyle: textStyle,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0))),
+                        labelText: 'Description',
+                        labelStyle: TextStyle(fontFamily: "Poppins"),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.red[400],
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.red[400],
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -97,11 +169,26 @@ class _NoteDetailState extends State<NoteDetail> {
                       children: [
                         Expanded(
                           child: RaisedButton(
-                            color: Theme.of(context).primaryColor,
-                            child: Text(
-                              "Save",
-                              style: TextStyle(color: Colors.white),
-                              textScaleFactor: 1.15,
+                            // color: Theme.of(context).primaryColor,
+
+                            color: Color.fromRGBO(13, 87, 208, 1),
+                            shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40.0)),
+                            ),
+                            // borderSide: BorderSide(
+                            //     width: 5.0,
+                            //     color: Color.fromRGBO(13, 87, 208, 1)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                "Save",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500),
+                                textScaleFactor: 1.15,
+                              ),
                             ),
                             onPressed: () {
                               setState(() {
@@ -115,11 +202,25 @@ class _NoteDetailState extends State<NoteDetail> {
                         Container(width: 5.0),
                         Expanded(
                           child: RaisedButton(
-                            color: Theme.of(context).primaryColor,
-                            child: Text(
-                              "Delete",
-                              style: TextStyle(color: Colors.white),
-                              textScaleFactor: 1.15,
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                  width: 1.0,
+                                  style: BorderStyle.solid,
+                                  color: Colors.grey[700]),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40.0)),
+                            ),
+                            color: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                "Delete",
+                                style: TextStyle(
+                                    color: Color.fromRGBO(13, 87, 208, 1),
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500),
+                                textScaleFactor: 1.15,
+                              ),
                             ),
                             onPressed: () {
                               setState(() {
@@ -192,9 +293,16 @@ class _NoteDetailState extends State<NoteDetail> {
 
   void _showAlertDialog(String title, String message) {
     AlertDialog alertDialog = AlertDialog(
-      title: Text(title),
-      content: Text(message),
-    );
+        title: Text(title,
+            style:
+                TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.bold)),
+        content: Text(
+          message,
+          style: TextStyle(fontFamily: "Poppins"),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        ));
     showDialog(context: context, builder: (_) => alertDialog);
   }
 

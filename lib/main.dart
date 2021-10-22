@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Work Manager',
         theme: ThemeData(
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           primaryColor:Colors.cyan,
-          accentColor: Colors.cyanAccent,
+          // accentColor: Colors.cyanAccent,
     
-          cardColor:Colors.black,
+          // cardColor:Colors.black,
 
         ),
         home: HomePage());
